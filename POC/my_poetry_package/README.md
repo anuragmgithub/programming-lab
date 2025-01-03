@@ -194,6 +194,51 @@ Install these exact versions in another environment:
 pip install -r requirements.txt  
 ```
 
+Try to update or modify dependencies:  
+
+Suppose you need to update one package (e.g., Flask) to a newer version.  
+With pip freeze, you must manually adjust the version in requirements.txt and ensure its new sub-dependencies are compatible with the existing ones.    
+There’s no automatic resolution or guarantee that the new combination of versions will work without conflicts.  
+
+
+Key Differences in Updating Dependencies:  
+With pip freeze:
+Manual Work:
+
+You manually update the version of a package in requirements.txt.  
+You must ensure sub-dependencies remain compatible.  
+No Resolution:  
+
+pip install -r requirements.txt does not resolve conflicts; it merely installs the specified versions.  
+With poetry.lock:  
+Automatic Resolution:  
+Poetry resolves all dependencies, ensuring compatibility across direct and transitive dependencies.  
+Updates poetry.lock with the exact versions after resolution.    
+
+Poetry dependecies resolution:  
+Example of a potential conflict:  
+
+Flask@2.1.0 requires Werkzeug>=2.0.  
+Your project already has Werkzeug==1.0, which is incompatible.  
+Poetry resolves this by:  
+
+Upgrading Werkzeug to a compatible version (e.g., Werkzeug==2.2).  
+Ensuring that all dependencies remain functional with the new version.  
+
+When there is no common intersection between the dependency requirements of two packages, Poetry's behavior is to fail gracefully and provide a clear error message. 
+
+With pip install flask==2.1.0:  
+
+pip would upgrade urllib3 to a version satisfying Flask (>=1.26.3), breaking requests silently because requests explicitly requires urllib3==1.26.2.  
+No warnings or errors would be provided.  
+The project might fail during runtime when requests attempts to use the incompatible urllib3.  
+
+With Poetry:  
+Poetry detects the incompatibility at installation time.  
+It prevents you from creating a broken environment, ensuring dependency integrity.  
+
+
+  
 
 
 
