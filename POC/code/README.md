@@ -35,6 +35,7 @@ print(user)
 ```
 
 Here, Pydantic will validate the addresses field as a list of Address objects, ensuring that each dictionary in the list conforms to the Address model. Without Pydantic, you would have to manually loop through and check each field of addresses.  
+
 ---  
 ## Why @property Can Be Useful:  
 - Code Readability:  
