@@ -50,5 +50,11 @@ def power(a,b):
     result = operations.power(a, b)
     click.echo(f"The result of {a} ** {b} is: {result}")
 
+# cli.add_command(click.command(name='add', help='Add two numbers.'))
+# cli.add_command(click.command(name='subtract', help='Subtract two numbers.'))
+# cli.add_command(click.command(name='multiply', help='Multiply two numbers.'))
+# cli.add_command(click.command(name='divide', help='Divide two numbers.'))
+# cli.add_command(click.command(name='power', help='Raise a number to the power of another.'))
+
 if __name__ == '__main__':
     cli()

@@ -1,0 +1,4 @@
+# requirements.txt
+pydantic
+mysql-connector-python
+python-dotenv
