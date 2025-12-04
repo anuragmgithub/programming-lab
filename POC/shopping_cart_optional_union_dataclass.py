@@ -3,6 +3,19 @@ from dataclasses import dataclass, field
 from typing import Optional, Union
 
 
+"""Guidelines for using dataclasses vs regular classes:
+Data classes:	store data, represent entities, include minimal logic
+Behavior/service classes:	contain business logic or processing but no persistent state
+Don’t use dataclass: 	when class is only methods
+Use dataclass: 	when class represents a real “thing” (DTO, Entity, Model)
+
+Quick Rule of Thumb
+Use @dataclass when:
+If you remove the methods and the class is still meaningful, it’s a data class.
+
+Use normal class when:
+If removing attributes makes the class useless, it’s a behavior class.
+"""
 @dataclass(slots=True)
 class Product:
     """
