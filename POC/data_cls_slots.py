@@ -19,4 +19,4 @@ p.new_field = "extra"  # allowed
 
 ps = ProductSlots(2, "Mobile", 25000)
 print(ps.__dict__)  # AttributeError: 'ProductSlots' object has no attribute '__dict__'
-# ps.new_field = "extra"  # AttributeError: 'ProductSlots
+# ps.new_field = "extra"  # AttributeError: 'ProductSlots ' object has no attribute 'new_field'
