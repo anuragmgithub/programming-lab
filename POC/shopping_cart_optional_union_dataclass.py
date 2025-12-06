@@ -15,6 +15,10 @@ If you remove the methods and the class is still meaningful, it’s a data class
 
 Use normal class when:
 If removing attributes makes the class useless, it’s a behavior class.
+
+If class describes a thing | Use @dataclass 
+If class does things | Don’t use @dataclass
+
 """
 @dataclass(slots=True)
 class Product:
