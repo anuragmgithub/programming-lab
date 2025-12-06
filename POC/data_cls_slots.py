@@ -14,7 +14,7 @@ class ProductSlots:
 
 
 p = ProductNoSlots(1, "Laptop", 50000)
-print(p.__dict__)   # visible and modifiable
+print(p.__dict__)   # visible and modifiable ,Every normal Python object stores its attributes in a dictionary called __dict__.
 p.new_field = "extra"  # allowed
 
 ps = ProductSlots(2, "Mobile", 25000)
