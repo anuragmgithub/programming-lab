@@ -324,3 +324,102 @@ Contributions may be opened later.
 
 **🚨 NOTE:** This project is under active development.
 Expect rapid iteration and architectural evolution.
+
+```
+ai_dataops_platform/
+│
+├── backend/
+│   │
+│   ├── app/
+│   │   ├── main.py
+│   │   │
+│   │   ├── core/
+│   │   │   ├── config.py
+│   │   │   ├── logging_config.py
+│   │   │   ├── security.py
+│   │   │   └── dependencies.py
+│   │   │
+│   │   ├── api/
+│   │   │   ├── router.py
+│   │   │   ├── v1/
+│   │   │   │   ├── pipelines.py
+│   │   │   │   ├── runs.py
+│   │   │   │   ├── tasks.py
+│   │   │   │   ├── chat.py
+│   │   │   │   └── health.py
+│   │   │
+│   │   ├── schemas/
+│   │   │   ├── pipeline_schema.py
+│   │   │   ├── task_schema.py
+│   │   │   ├── run_schema.py
+│   │   │   └── chat_schema.py
+│   │   │
+│   │   ├── models/
+│   │   │   ├── pipeline_model.py
+│   │   │   ├── task_model.py
+│   │   │   ├── run_model.py
+│   │   │   └── log_model.py
+│   │   │
+│   │   ├── services/
+│   │   │   ├── pipeline_service.py
+│   │   │   ├── execution_service.py
+│   │   │   ├── chat_service.py
+│   │   │   └── rag_service.py
+│   │   │
+│   │   ├── pipeline_engine/
+│   │   │   ├── dag.py
+│   │   │   ├── task.py
+│   │   │   ├── executor.py
+│   │   │   ├── scheduler.py
+│   │   │   └── retry.py
+│   │   │
+│   │   ├── database/
+│   │   │   ├── session.py
+│   │   │   ├── base.py
+│   │   │   ├── crud_pipeline.py
+│   │   │   ├── crud_run.py
+│   │   │   └── crud_log.py
+│   │   │
+│   │   ├── websocket/
+│   │   │   └── pipeline_ws.py
+│   │   │
+│   │   ├── plugins/
+│   │   │   └── transforms/
+│   │   │
+│   │   └── utils/
+│   │       ├── exceptions.py
+│   │       ├── helpers.py
+│   │       └── profiler.py
+│   │
+│   ├── tests/
+│   │   ├── test_api.py
+│   │   ├── test_pipeline_engine.py
+│   │   ├── test_services.py
+│   │   └── test_database.py
+│   │
+│   ├── alembic/                 # DB migrations
+│   │
+│   ├── requirements.txt
+│   ├── pyproject.toml
+│   └── Dockerfile
+│
+├── frontend/
+│   ├── package.json
+│   ├── public/
+│   └── src/
+│       ├── components/
+│       ├── pages/
+│       ├── services/
+│       └── websocket/
+│
+├── chatbot/
+│   ├── chatbot_engine.py
+│   ├── embeddings.py
+│   ├── retriever.py
+│   └── prompt_templates.py
+│
+├── docker-compose.yml
+├── .env
+├── README.md
+└── architecture.md
+```
