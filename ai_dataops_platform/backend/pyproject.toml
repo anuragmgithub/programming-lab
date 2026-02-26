@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "ai-dataops-backend"
+version = "0.1.0"
+description = "AI DataOps Platform Backend"
+authors = ["Anurag Mishra"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.133.1"
+uvicorn = {extras = ["standard"], version = "^0.41.0"}
+sqlalchemy = "^2.0.47"
+alembic = "^1.18.4"
+pymysql = "^1.1.2"
+python-dotenv = "^1.2.1"
+pydantic-settings = "^2.13.1"
+asyncmy = "^0.2.11"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^26.1.0"
+isort = "^8.0.0"
+pytest = "^9.0.2"
+httpx = "^0.28.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
